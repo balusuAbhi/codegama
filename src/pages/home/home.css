@@ -1,0 +1,6 @@
+.homeBody-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 26px 9px;
+}

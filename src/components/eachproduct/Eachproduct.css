@@ -1,0 +1,30 @@
+.product-conatiner img{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+}
+.product-conatiner {
+    width: 350px;
+    padding: 10px;
+    margin: 0 5px 10px;
+    box-shadow: -1px 2px 9px 0px rgba(87,86,87,1);
+}
+.view-btn{
+    border: none;
+    background-color: #ff9f00;
+    color: #fff;
+    padding: 4px 36px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    text-align: center;
+}
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}

@@ -1,0 +1,9 @@
+.AllProducts-conatiner{
+background: #fff;
+box-shadow: 0 1px 8px 0 rgba(0,0,0,.09);
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+flex: 10;
+gap: 50px;
+}
