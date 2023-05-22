@@ -4,14 +4,6 @@ export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_PRODUCT_FROM_CART = "REMOVE_PRODUCT_FROM_CART";
 export const FILTER_PRODUCTS = "FILTER_PRODUCTS";
 
-//actions
-// export const loadData = (data) => {
-//   return {
-//     type: LOAD_ALL_PRODUCTS,
-//     payload: data,
-//   };
-// };
-
 //adding product to cart action
 export const addToCart = (cartData) => {
   return {
@@ -27,6 +19,7 @@ export const removeProductFromCart = (cartData) => {
     payload: cartData,
   };
 };
+
 //filtering
 export const filterProducts = (filter_catogary) => {
   return {

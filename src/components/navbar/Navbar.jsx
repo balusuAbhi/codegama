@@ -1,11 +1,11 @@
 import React from 'react'
 import logo from "../../assets/navBar/flipkart-plus_8d85f4.png"
 import './Navbar.css'
-import {MdFilterAlt} from 'react-icons/md'
+import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 
 
-function Navbar() {
+function Navbar({cartCount}) {
   return (
    <div className='navbar-container'>
     <div className='navbar-wrapper'>
@@ -14,13 +14,18 @@ function Navbar() {
         </div>
         <div className='navbar-right'> 
          <Link to='/'>Home</Link>
-         {/* <Link to='javascript:void(0)'><MdFilterAlt style={{color : "white", height:"100%"}}/></a> */}
          <Link to='#'>Wishlist</Link>
-         <Link to='/cart'>Cart</Link>
+         <Link to='/cart'><div className='cartParentContainer'>cart {cartCount.length !== 0 && <span className="cartValue">{cartCount.length}</span>}</div></Link>
         </div>
     </div>
    </div>
   )
 }
 
-export default Navbar
+const mapStateToProps = (state)=>{
+  return{
+    cartCount : state.cartProducts
+  }
+}
+
+export default connect(mapStateToProps)(Navbar)

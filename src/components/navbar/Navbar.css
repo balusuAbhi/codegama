@@ -22,3 +22,19 @@
     font-size: 20px;
     font-weight: 500;
 }
+.cartParentContainer{
+    position: relative;
+}
+.cartValue{
+    background-color: #f03528;
+    font-size: 13px;
+    font-weight: 500;
+    position: absolute;
+    top: -7px;
+    right: -14px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+}
