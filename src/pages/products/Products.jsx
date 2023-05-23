@@ -8,6 +8,7 @@ import Navbar from "../../components/navbar/Navbar";
 function Products({ allProducts,addProduct,cartData}) {
   const [viewProduct, setViewProduct] = useState(null);
   const { id } = useParams();
+  
   useEffect(() => {
     const product = allProducts.filter((each) => {
       return each.id == id;
@@ -17,20 +18,19 @@ function Products({ allProducts,addProduct,cartData}) {
   }, []);
 
 
-  const handleCartData = (id)=>{ 
-    const doesNotContain = cartData.some((each)=>{
-      return each.id === id
-    });
-
-    if(doesNotContain){
-      alert('the product is already in cart')
-    }else{
-      const selectedProduct = allProducts.filter((Eachproduct)=>{
-        return Eachproduct.id === id
-      })
-      const newCartData = [...cartData,...selectedProduct];
-      addProduct(newCartData); 
+  const handleCartData = (obj)=>{ 
+    let found = false;
+    for(let i=0;i<cartData.length; i++){
+     if(cartData[i].id === obj.id){
+       cartData[i].count++
+       found = true;
+       break
+     }
     }
+    if(!found){
+     cartData.push({...obj,count:1})
+    }
+    addProduct([...cartData])
   }
 
   return (
